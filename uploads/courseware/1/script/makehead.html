@@ -1,0 +1,163 @@
+﻿<!doctype html>
+<html html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <link rel="stylesheet" href="./css/style.css" media="screen"/>
+    <link rel="stylesheet" href="./css/vplayer.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <script type="text/javascript" src="./js/plugin/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/data.js" charset="utf-8"></script>
+
+    <style>
+        .title-wrap{ position: absolute; left: 17.24%; top: 6.23%; width: 20%; height: 4.67%}
+        .title-wrap #script_name{ width: 100%; height: 100%; border: none; background: none; font-size: 24px }
+        .title-wrap #script_name:hover, .title-wrap #script_name:focus{ border: none; outline: none }
+        .print-wrap { position: absolute; left: 66.56%; top: 4.15%; width: 5.26%; height: 7.16%; }
+        .print-wrap img{ width: 100%; height: 100% }
+        .save-wrap { position: absolute; left: 56.56%; top: 4.15%; width: 5.26%; height: 7.16%; display: none }
+        .save-wrap img{ width: 100%; height: 100% }
+
+        .content-wrap{ position: absolute; left: 20.15%; top: 15.57%; width: 49.47%; height: 72.69%;}
+        .content-wrap canvas{ width: 100%; height: 100% }
+
+        .toolbar{position: absolute; left: 10.05%; top: 5.81%; width: 10.05%; height: 24.4%;}
+        .toolbar img{ width: 100%; height: 100% }
+        .toolbar a{ position: absolute; left:0; width: 100%; height: 20.85% }
+        .character-wrap{ position: absolute; left: 75.52%; top: 8.93%; width: 15.26%; height: 77.67%}
+        .character-wrap img{ width: 100%; height: 100% }
+        .character-btn-prev{ position: absolute; left: 77.42%; top: 76.63%; width: 5.36%; height: 7.16%}
+        .character-btn-prev img{ width: 100%; height: 100% }
+        .character-btn-next{ position: absolute; left: 83.42%; top: 76.63%; width: 5.36%; height: 7.16%}
+        .character-btn-next img{ width: 100%; height: 100% }
+        .characters-page{ height: 100% }
+        .character-elem{ width: 100%; height: 33%; margin-bottom: 3% }
+        .character-elem img{width: 100%}
+
+    </style>
+</head>
+<>
+<div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0">
+    <img src="images/makehead/bg.png" style="width: 100%; height: 100%">
+</div>
+
+<div class="save-wrap">
+    <a id="makehead_save" onclick="save_head();"><img src="images/makehead/save.png" width="50px"></a>
+</div>
+<div class="print-wrap">
+    <a id="makehead_print"><img src="images/makehead/print.png" width="50px"></a>
+</div>
+<style>
+    /*canvas*/
+    /*{*/
+      /*cursor:url(brush.cur) auto;*/
+    /*}*/
+</style>
+<div class="content-wrap">
+    <canvas id="sheet"></canvas>
+</div>
+<div class="toolbar">
+    <div style="position: relative; width: 100%; height: 100%">
+        <img src="images/makehead/pencil_btn.png">
+        <a id="pencil_red" style="top: 0"></a>
+        <a id="pencil_blue" style="top: 26.38%"></a>
+        <a id="pencil_yellow" style="top: 52.34%"></a>
+        <a id="pencil_green" style="top: 78.72%"></a>
+        <!-----------Save Button position----------------->
+    </div>
+</div>
+<div class="character-wrap">
+
+    <div style="position: relative; width: 100%; height: 100%">
+        <img src="images/makehead/character-frame.png">
+        <div id="characters" style="position: absolute; left: 8.87%; top: 11.49%; width: 81.23%; height: 73.13%">
+
+        </div>
+    </div>
+</div>
+<div class="character-btn-prev">
+    <a id="pageup"><img src="images/makehead/page_prev.png"></a>
+</div>
+<div class="character-btn-next">
+    <a id="pagedown"><img src="images/makehead/page_next.png"></a>
+</div>
+
+<!--</div>-->
+<div class="btn_wrap">
+    <div class="btn_elem" style="left: 0.88%; top: 14.95%">
+        <a id="btn_comment"><img height="50px" src="images/btn-comment.png"></a><br>
+    </div>
+    <div class="btn_elem" style="left: 0.88%; top: 33.35%">
+        <a id="btn_words"><img height="50px" src="images/btn-words.png"></a><br>
+    </div>
+    <div class="btn_elem" style="left: 0.88%; top: 51.52%">
+        <a id="btn_print"><img height="50px" src="images/btn-print.png"></a>
+    </div>
+    <div class="btn_elem" style="left: 0.88%; top: 68.95%">
+        <a id="btn_scriptread"><img height="50px" src="images/btn-scriptread.png"></a>
+    </div>
+    <div class="btn_elem" style="left: 94.94%; top: 23.98%">
+        <a id="btn_song"><img height="50px" src="images/btn-song.png"></a>
+    </div>
+    <div class="btn_elem" style="left: 94.94%; top: 42%">
+        <a id="btn_scriptmake"><img height="50px" src="images/btn-scriptmake.png"></a>
+    </div>
+    <div class="btn_elem" style="left: 94.94%; top: 60%">
+        <a id="btn_headmake"><img height="50px" src="images/btn-headmake_hover.png"></a>
+    </div>
+</div>
+
+
+<div class="modal fade" id="dbheadModal" tabindex="-1" role="dialog" aria-labelledby="dbheadModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="dbfilenameModalLabel" style="text-align: center">保存到“我的作品”</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="dbfilename" name="dbfilename">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-primary" id="head_save_btn">是</a>
+                <a type="button" class="btn btn-secondary" data-dismiss="modal">否</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!---------------------pdf function------------------->
+<script src="./js/pdf/jspdf.js"></script>
+<script src="./js/pdf/pdf_generator.js"></script>
+<script src="./js/pdf/jspdf.debug.js"></script>
+<!--<script src="./js/pdf/libs/require/require.js"></script>-->
+<script src="./js/pdf/libs/png_support/zlib.js"></script>
+<script src="./js/pdf/libs/png_support/png.js"></script>
+<script src="./js/pdf/libs/deflate.js"></script>
+<script src="./js/pdf/js/basic.js"></script>
+<script src="./js/pdf/plugins/standard_fonts_metrics.js"></script>
+
+<!--<script src="./js/printjs/print.min.js"></script>-->
+<!--<link rel = "stylesheet" type="text/css" href="https://printjs-4de6.kxcdn.com/print.min.css">-->
+
+<script  type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<!----------------------pdf plugin--------------------->
+<script type="text/javascript" src="./js/plugin/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="./js/plugin/jquery.pngFix.pack.js"></script>
+<script type="text/javascript" src="./js/plugin/interface.js"></script>
+<script type="text/javascript" src="./js/plugin/vplayer.js"></script>
+<script type="text/javascript" src="./js/plugin/hammer.min.js"></script>
+<script type="text/javascript" src="./js/plugin/lufylegend-1.10.1.min.js"></script>
+<script type="text/javascript" src="./js/plugin/lufylegend.ui-0.14.1.min.js"></script>
+<script type="text/javascript" src="./js/plugin/fabric.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+<script type="text/javascript" src="./js/button.js"></script>
+<script type="text/javascript" src="./js/words.js"></script>
+<script type="text/javascript" src="./js/makehead.js"></script>
+</body>
+</html>

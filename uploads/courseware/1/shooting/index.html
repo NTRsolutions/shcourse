@@ -1,0 +1,31 @@
+﻿<!doctype html>
+<html html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="./css/style.css" media="screen"/>
+    <script type="text/javascript" src="./js/plugin/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/data.js"></script>
+</head>
+<body>
+<div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0 ">
+    <img src="images/bg.png" style="width: 100%; height: 100%;">
+</div>
+<div class="wrap">
+    <div class="content">
+        <div class="content_wrap" id="content_wrap">
+            <!--<img src="images/bg.png" style="width: 150%;height: 117%;position: absolute">-->
+            <a id="file" class="index-btn-local"></a>
+            <a id="record" class="index-btn-shooting" href="record.html"></a>
+            <input id="video_file" name="video_file" type="file" accept="video/mp4" style="display: none;">
+            <div id="progress-wrp" style="display: none">
+                <div class="progress-bar"></div>
+                <div class="status">0%</div>
+            </div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript" src="./js/main.js"></script>
+</body>
+</html>

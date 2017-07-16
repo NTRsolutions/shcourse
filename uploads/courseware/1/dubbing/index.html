@@ -1,0 +1,117 @@
+﻿<!doctype html>
+<html html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="./css/bootstrap.css" media="screen"/>
+    <link rel="stylesheet" href="./css/style_video.css" media="screen"/>
+    <link rel="stylesheet" href="./css/vplayer.css" />
+    <script type="text/javascript" src="./js/plugin/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/data.js"></script>
+    <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+    <link rel="stylesheet" href="./css/croppie.css" />
+    <script type="text/javascript" src="./js/plugin/croppie.js"></script>
+    <script>
+        var current_page = 1;
+    </script>
+<style>
+    .videoPlayer-dimensions {
+        width: 100%;
+        height: 94%;
+    }
+</style>
+</head>
+<body>
+<div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0">
+    <img src="images/bg.png" style="width: 100%; height: 100%">
+</div>
+<div class="wrap">
+
+    <div class="content" style="">
+        <div class="contentWrap" id="contentWrap">
+            <div class="videoContent">
+                <video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered">
+                    <p class="vjs-no-js"></p>
+                </video>
+                <!--<span id="replay"><img src="images/replay.png" width="188" height="73"></span>-->
+            </div>
+            <div class="gameContent" id="game"></div>
+            <input type="file" id="head-file" name="head-file">
+        </div>
+    </div>
+    <div class="custom-btn-wrapper" style="position: relative;height: 100%;">
+        <div class="action-btn-sec" style="position: absolute;    bottom: 0;    height: 10%;    width: 100%;">
+
+             <a class="action-btn" style="position: absolute;left:15%" id="read-btn"></a>
+             <a class="action-btn" style="position: absolute;left:39%" id="song-btn"></a>
+             <a class="action-btn" style="position: absolute;left:65%" id="script-btn"></a>
+
+        </div>
+    </div>
+    <div>
+        <a id="play" class="disabled"></a>
+        <a class="recorder-btn" id="record-btn"></a>
+
+    </div>
+</div>
+<div class="modal fade" id="dbfilenameModal" tabindex="-1" role="dialog" aria-labelledby="dbfilenameModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="dbfilenameModalLabel" style="text-align: center">保存到“我的作品”</h4>
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                <!--<span aria-hidden="true">&times;</span>-->
+                <!--</button>-->
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <!--<label for="dbfilename" class="form-control-label">Recipient:</label>-->
+                        <input type="text" class="form-control" id="dbfilename" name="dbfilename">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-primary" id="save_btn"  style="position: absolute;left:5%;width:15%">是</a>
+                <a type="button" class="btn btn-secondary" data-dismiss="modal">否</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="imgcropModal" tabindex="-1" role="dialog" aria-labelledby="imgcropModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <!--<div class="modal-header">-->
+                <!--<h4 class="modal-title" id="imgcropModalLabel" style="text-align: center"></h4>-->
+                <!--&lt;!&ndash;<button type="button" class="close" data-dismiss="modal" aria-label="Close">&ndash;&gt;-->
+                <!--&lt;!&ndash;<span aria-hidden="true">&times;</span>&ndash;&gt;-->
+                <!--&lt;!&ndash;</button>&ndash;&gt;-->
+            <!--</div>-->
+            <div class="modal-body">
+                <!--<img src="" id="head_img">-->
+                <div id="head_img"></div>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-primary" id="savehd_btn">是</a>
+                <a type="button" class="btn btn-secondary" id="cloasehd_btn"  >否</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<script type="text/javascript" src="./js/plugin/jquery-1.9.1.min.js"></script>-->
+<script type="text/javascript" src="./js/plugin/my-jquery-ui.js"></script>
+<script type="text/javascript" src="./js/plugin/my-jquery-ui-touch.js"></script>
+<script type="text/javascript" src="./js/plugin/jquery.pngFix.pack.js"></script>
+<script type="text/javascript" src="./js/plugin/interface.js"></script>
+<script type="text/javascript" src="./js/plugin/vplayer.js"></script>
+<script type="text/javascript" src="./js/plugin/hammer.min.js"></script>
+<script type="text/javascript" src="./js/plugin/lufylegend-1.10.0.min.js"></script>
+<script type="text/javascript" src="./js/game.js"></script>
+<script type="text/javascript" src="./js/lib.js"></script>
+<script type="text/javascript" src="./js/record.js"></script>
+</body>
+</html>

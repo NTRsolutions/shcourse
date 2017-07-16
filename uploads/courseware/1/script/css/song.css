@@ -1,0 +1,16 @@
+.content_wrap{
+    padding: 50px 80px;
+}
+.title{
+    margin-bottom: 50px;
+    text-align: center;
+}
+.videoContent{
+    float: left;
+    width: 640px;
+    margin-right: 70px;
+}
+.text-content{
+    float: left;
+    width: 400px;
+}

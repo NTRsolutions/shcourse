@@ -1,0 +1,161 @@
+body{margin:0;padding: 0;width:100%;height:100%;overflow: hidden;position: relative;transform-origin:top left;-ms-transform-origin:top left;
+    position:absolute;margin:0 ;overflow: hidden;background-size: 100% 100%;
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
+}
+.wrap{
+    /*z-index:1;*/
+    /*width:1280px;*/
+    /*height:720px;*/
+    /*overflow: hidden;*/
+    /*font-size: 18px;*/
+    /*position: relative;*/
+
+    z-index:1;
+    width:100%;
+    height:100%;
+    overflow: hidden;
+    font-size: 18px;
+    position: absolute;
+}
+
+.content_wrap{
+    width: 100%;
+    height: 100%;
+    /*position:relative;*/
+    background: url("../images/bg.png") no-repeat;
+}
+
+.index-btn-local{
+    position: absolute;
+    top: 33%;
+    display: inline-block;
+    width: 15.3%;
+    height: 38.1%;
+    left: 26%;
+    background: url("../images/upload.png") no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+.index-btn-shooting{
+    position: absolute;
+    top: 33%;
+    display: inline-block;
+    width: 15.3%;
+    height: 38.1%;
+    left:59%;
+    background: url("../images/shooting.png") no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+    cursor: pointer;
+    text-decoration: none;
+    color: #000;
+}
+/*#file{*/
+    /*left: 400px;*/
+/*}*/
+/*#record{*/
+    /*left: 750px;*/
+/*}*/
+.index-btn span{
+    display: inline-block;
+    margin-top: 50px;
+}
+
+#progress-wrp {
+    border: 1px solid #0099CC;
+    padding: 1px;
+    position: relative;
+    height: 30px;
+    border-radius: 3px;
+    margin: 10px;
+    text-align: left;
+    background: #fff;
+    /*display: none;*/
+    box-shadow: inset 1px 3px 6px rgba(0, 0, 0, 0.12);
+}
+#progress-wrp .progress-bar{
+    height: 100%;
+    border-radius: 3px;
+    background-color: #f39ac7;
+    width: 0;
+    box-shadow: inset 1px 1px 10px rgba(0, 0, 0, 0.11);
+}
+#progress-wrp .status{
+    top:3px;
+    left:50%;
+    position:absolute;
+    display:inline-block;
+    color: #000000;
+}
+
+
+section.experiment{
+    z-index:1;
+    width:100%;
+    height:100% ;
+    overflow: hidden;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+}
+
+.recorder-btn{
+    position: absolute;
+    right: 48%;
+    bottom: 3%;
+    background: url("../images/record.png") no-repeat;
+    background-size: 100% 100%;
+    height: 8%;
+    width: 3.5%;
+}
+.recorder-btn.record{
+    background-image: url("../images/stop.png");
+}
+
+#play{
+    position: absolute;
+    right: 54%;
+    bottom: 4%;
+    background: url("../images/preview.png") no-repeat;
+    background-size: 100% 100%;
+    height: 6%;
+    width: 4.5%;
+}
+
+#save{
+    position: absolute;
+    right: 41%;
+    bottom: 4%;
+    background: url("../images/save.png") no-repeat;
+    background-size: 100% 100%;
+    height: 6%;
+    width: 4.5%;
+}
+
+.modal-header {
+    border-bottom: none;
+}
+.modal-footer {
+    border-top: none;
+    text-align: center;
+}
+
+#time_counter{
+    position: absolute;
+    top: 1%;
+    right: 2%;
+    font-size: 30px;
+}
+
+#ajax_loader{
+    position: absolute;
+    top: calc(50% - 50px);
+    left: calc(50% - 67px);
+    font-size: 30px;
+}

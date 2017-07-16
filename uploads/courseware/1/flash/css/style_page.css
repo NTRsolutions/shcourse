@@ -1,0 +1,31 @@
+body{
+    margin:0 !important;
+}
+
+.content-wrap{
+    margin: 0 auto;
+    position: relative;
+}
+
+.content{
+    width: 768px;
+    position:relative;
+    transform-origin:top left;
+    -ms-transform-origin:top left;
+    margin:0 auto;
+    /*border: 1px solid #666;*/
+}
+
+.page-btn{
+    position: absolute;
+}
+
+.back-btn{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+
+#prev_btn{ left: 0px; top: 0px; opacity: 0}
+#next_btn{ left: 0px; bottom: 0px; opacity: 0}

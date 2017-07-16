@@ -1,0 +1,59 @@
+﻿<!doctype html>
+<html html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="./css/bootstrap.css" media="screen"/>
+    <link rel="stylesheet" href="./css/style.css" media="screen"/>
+    <script type="text/javascript" src="./js/plugin/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/data.js"></script>
+    <script src="https://cdn.webrtc-experiment.com/RecordRTC.js"></script>
+</head>
+<body>
+<div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0">
+    <img id="shooting_bg" src="images/capture_bg.png" style="width: 100%; height: 100%">
+    <img  src="images/shooting_play_bg.png" style="width: 100%; height: 100%;display: none">
+</div>
+<section class="experiment" >
+    <video id="preview" style="height: 85.7%;vertical-align: top;width: 49.7%;left: 26%;position: absolute;/*background-color: #252525;*/">
+    </video>
+    <img src="images/ajax-loader.gif" id="ajax_loader" style="display: none">
+    <span id="time_counter">03:00</span>
+    <a id="play" style="display: none"></a>
+    <a class="recorder-btn" id="record-btn"></a>
+    <!--<a id="save" data-toggle="modal" data-target="#rcfilenameModal" >保存</a>-->
+    <!------------Save Button Position--------------->
+    <!--<button class="recorder-btn" id="stop" disabled>Stop</button>-->
+    <div id="container" style="padding: 1em 2em;"></div>
+</section>
+<div class="modal fade" id="rcfilenameModal" tabindex="-1" role="dialog" aria-labelledby="rcfilenameModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="rcfilenameModalLabel" style="text-align: center">保存到“我的作品”</h4>
+                <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                    <!--<span aria-hidden="true">&times;</span>-->
+                <!--</button>-->
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <!--<label for="rcfilename" class="form-control-label">Recipient:</label>-->
+                        <input type="text" class="form-control" id="rcfilename" name="rcfilename">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <a type="button" class="btn btn-primary" id="save_btn">是</a>
+                <a type="button" class="btn btn-secondary" data-dismiss="modal">否</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="./js/record.js"></script>
+
+</body>
+</html>

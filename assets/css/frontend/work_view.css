@@ -1,0 +1,55 @@
+.share_content_btn{ position: absolute; left: 16%; top:79.5%;width: 4.2%; height: 11.7%;}
+.work_view_area
+{
+    position: absolute;
+    top:21%;
+    left: 29%;
+    width: 42%;
+    height:66.3%;
+    /*background-color: #c0b696;*/
+}
+.scriptPrint_Icon
+{
+    position: absolute;
+    top:19.2%;
+    right:14.8%;
+    width:4.73%;
+    height:5.46%;
+}
+.headImgPrint_Icon
+{
+    position: absolute;
+    top:19.2%;
+    right:14.8%;
+    width:7.9%;
+    height:5.46%;
+}
+.scriptwork-content{
+    font:normal 22px "Arial Negreta", "Arial Normal", "Arial";
+    /*padding-left:80px;*/
+}
+.modal-backdrop.fade.in {
+    opacity: 0.2;
+    filter: alpha(opacity=100);
+}
+
+/*****************************/
+.dubbing-content{ position: absolute; left: 21.15%; top: 23.68%; width: 60.10%; height: 64.70%}
+/*.player{ position: absolute; left: 33.28%; top: 63.54%; width: 39.11%; height: 5.65% }*/
+#pButton{ position: absolute; left: 31.68%; top: 84.2%; width: 2.71%; height: 4.81% }
+#pButton img{ width: 100%; height: 100% }
+#timeline{ position: absolute; left: 35.02%; top: 85.5%; width: 35.65%; height: 1.02% }
+#timeline img{ width: 100%; height: 100% }
+#playhead{ position: absolute; left: 34.7%; top: 85.45%; width: 1.41%; height: 2.5% }
+#playhead img{ width: 100%; height: 100% }
+
+.shooting-content { position: absolute; left:12.1%; top: 16.4%; width: 72.75%; height: 75.2%;background-color: #0000C0 }
+.shooting-content video{ width: 100%; height: 100% }
+.shooting_share_content
+{
+    position: absolute;
+    left: 88.5%;
+    top: 58.5%;
+    width: 4.2%;
+    height: 11.7%;
+}

@@ -1,0 +1,53 @@
+﻿<!doctype html>
+<html html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!--<link rel="stylesheet" href="./css/style.css" media="screen"/>-->
+    <link rel="stylesheet" href="./css/style_video.css" media="screen"/>
+    <link rel="stylesheet" href="./css/vplayer.css" />
+
+    <style>
+        .videoContent-frame{ position: absolute; left: 8.17%; top: 9.15%; width: 62.60%; height: 84.72%}
+        .videoContent-frame img{ width: 100%; height: 100% }
+        .videoContent { position: absolute; left: 12%; top: 6%; width: 73%; height: 87%; }
+        .videoContent video{ width: 100%; height: 100% }
+
+        .song-text-bg{ position: absolute; left: 72.65%; top: 9.15%; width: 18.33%; height: 84.72%}
+        .song-text-bg img{ width: 100%; height: 100% }
+        .song-text{ position: absolute; left: 72.65%; top: 9.15%; width: 18.33%; height: 84.72%}
+
+        .videoPlayer-dimensions { width: 100%; height: 100%; }
+        .text-content{ padding: 10px;font-size: 1.5rem }
+    </style>
+
+</head>
+<body>
+<div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0">
+    <img src="images/bg.png" style="width: 100%; height: 100%">
+</div>
+
+<div class="videoContent">
+    <video id="videoPlayer" class="video-js vjs-default-skin vjs-big-play-centered">
+        <p class="vjs-no-js"></p>
+    </video>
+    <!--<span id="replay"><img src="images/replay.png" width="188" height="73"></span>-->
+</div>
+
+
+
+<!--</div>-->
+
+<script type="text/javascript" src="./js/plugin/jquery-1.10.2.js"></script>
+<script type="text/javascript" src="./js/plugin/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="./js/plugin/my-jquery-ui.js"></script>
+<script type="text/javascript" src="./js/plugin/my-jquery-ui-touch.js"></script>
+<script type="text/javascript" src="./js/plugin/jquery.pngFix.pack.js"></script>
+<script type="text/javascript" src="./js/plugin/interface.js"></script>
+<script type="text/javascript" src="./js/plugin/vplayer.js"></script>
+<script type="text/javascript" src="./js/plugin/hammer.min.js"></script>
+<script type="text/javascript" src="./js/plugin/lufylegend-1.10.0.min.js"></script>
+<script type="text/javascript" src="./js/main.js"></script>
+
+</body>
+</html>

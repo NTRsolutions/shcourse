@@ -1,0 +1,29 @@
+.profile_image { position: fixed; top: 21.32%; left: 13.94%; width:9.21%; height:19.81%; background-size: contain }
+.change_password_btn { position: absolute;top:42%;left:14.58%;width:7.60%; height:5.56%;}
+.edit_personal_info { position: absolute; top:42%;right:13.3%; width:7.60%; height:5.56%;}
+.share_prev_btn { position: absolute; left:13%; bottom:20%; width:3.22%;height:13.6%;}
+.share_next_btn { position: absolute; left:45.4%;bottom:20%;width:3.22%; height:13.6%;}
+.comment_prev_btn {position: absolute; right:45.2%; bottom:20%;width:3.22%; height:13.6%;}
+.comment_next_btn {position: absolute; right:13%;bottom:20%;width:3.22%;height:13.6%;}
+
+.share_list_wrapper {position: absolute;left:16.1%;top:57%; width:29.4%; height:33.7%;}
+.share_list_wrapper a {color:#fff}
+.comment_list_wrapper {position: absolute;right:16.1%;top:57%; width:29.2%; height:33.7%;}
+.comment_list_wrapper a{color: #fff}
+.share_item_title {position: absolute;left:4.64%;width:77.5%;height:13.9%;padding-top: 1.7%;padding-left: 7%;font-size: 15px;font-weight: bold;color: #252525;}
+.share_item_delete_btn {position: absolute;left:86.78%;width: 8.9%;height: 14.9%;}
+.comment_item_title {position: absolute;left:4.64%;width:77.5%;height:13.9%;padding-top: 1.7%;padding-left: 7%;font-size: 15px;font-weight: bold;color: #252525;}
+.comment_item_delete_btn {position: absolute;left:86.78%;width: 8.9%;height: 14.9%;}
+.static_info_fields p {vertical-align: bottom;display: table-cell;font-size: 27px;font-weight: bold;color:#fff}
+.teacher_username_lbl{position: absolute;display: table;width: 15%;height: 5%;left: 36%;top: 20%;}
+.teacher_school_lbl {position: absolute;display: table;width: 15%;height: 5%;left: 36%;top: 27%;}
+.teacher_gender_lbl{position: absolute;display: table;width: 15%;height: 5%;left: 36%;top: 34.5%;}
+.teacher_fullname_lbl{position: absolute;display: table;width: 15%;height: 5%;left: 60.2%;top: 20%;}
+.teacher_nickname_lbl {position: absolute;display: table;width: 15%;height: 5%;left: 60.2%;top: 27%;}
+
+.teacher_gender_edit{position: absolute;display: table;width: 10%;height: 5%;left: 36%;top: 36.5%;}
+.teacher_fullname_edit{position: absolute;display: table;width: 10%;height: 5%;left: 60.2%;top: 21%;}
+.teacher_nickname_edit{position: absolute;display: table;width: 10%;height: 5%;left: 60.2%;top: 27.5%;}
+
+.class_manage_btn{position: absolute;top:20.5%;right:13.3%;width:7.60%; height:5.56%;}
+#class_list_chks{position: absolute;top:28.5%;right:14.3%;width:18%; height:11.56%;overflow: auto}

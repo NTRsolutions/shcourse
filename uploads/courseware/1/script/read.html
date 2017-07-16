@@ -1,0 +1,1369 @@
+﻿<!doctype html>
+<html html xmlns="http://www.w3.org/1999/xhtml" lang="zh-CN" xml:lang="zh-CN">
+<head>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+	<link rel="stylesheet" href="./css/style.css" media="screen"/>
+	<link rel="stylesheet" href="./css/vplayer.css" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="./css/jquery-ui-1.10.4.css" />
+    <script type="text/javascript" src="./js/plugin/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/plugin/jquery-ui-1.10.4.js"></script>
+    <script type="text/javascript" src="./js/recorderjs/recorder.js" charset="utf-8"></script>
+    <script type="text/javascript" src="./js/data.js" charset="utf-8"></script>
+
+    <style>
+        .ui-tooltip, .arrow:after {
+            background: black;
+            border: 2px solid white;
+        }
+        .ui-tooltip {
+            padding: 10px 20px;
+            color: white;
+            border-radius: 20px;
+            font: bold 14px "Helvetica Neue", Sans-Serif;
+            text-transform: uppercase;
+            box-shadow: 0 0 7px black;
+        }
+        .arrow {
+            width: 70px;
+            height: 16px;
+            overflow: hidden;
+            position: absolute;
+            left: 50%;
+            margin-left: -35px;
+            bottom: -16px;
+        }
+        .arrow.top {
+            top: -16px;
+            bottom: auto;
+        }
+        .arrow.left {
+            left: 20%;
+        }
+        .arrow:after {
+            content: "";
+            position: absolute;
+            left: 20px;
+            top: -20px;
+            width: 25px;
+            height: 25px;
+            box-shadow: 6px 5px 9px -9px black;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+        .arrow.top:after {
+            bottom: -20px;
+            top: auto;
+        }
+
+
+        .dialog_text{
+            cursor: default;
+        }
+        .dialog_text:hover{
+            color: inherit;
+        }
+        .read_text{
+            cursor: pointer;
+        }
+        .read_text:hover{
+            background-color: #dfdaad;
+        }
+    </style>
+</head>
+<body>
+    <div style="position: absolute; width: 100%; height: 100%; left: 0; top: 0">
+        <img src="images/bg.png" style="width: 100%; height: 100%">
+    </div>
+    <div class="wrap">
+        <div class="content_wrap" id="script_content_area">
+            <div class="page" id="page_0">
+                <div class="page_en">
+                    <div class="col-md-12" style="padding: 5%;">
+                        <div class="script_title_wrap">
+                            <h1 class="script_title" style="text-align: center; font-size: 4rem; font-weight: bold; color: #ed4431">Tomorrow</h1>
+                            <input type="hidden" id="course_name" value="tomorrow">
+                        </div>
+                    </div>
+                    <div class="col-md-offset-2 col-md-2" style="">
+                        <div class="script_caracters_wrap">
+                            <h3 style="font-weight: 3rem; font-weight: bold; margin: 0">Characters</h3>
+                            <div style="font-size: 2.5rem">
+                                <div style="color: #7030a0">Monkey</div>
+                                <div style="color: #0099cc">Rabbit </div>
+                                <div style="color: #009900">Elephant</div>
+                                <div style="color: #e26c09">Narrator</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="">
+                        <div class="dialog">
+                            <div class="dialog_character">Summery</div>
+                            <div class="dialog_text" id="d_0_en" data-sound="03.mp3">
+                                <span class="read_text" id="s_03_1_en">This play tells the story of a monkey </span>
+                                <span class="read_text" id="s_03_2_en">who lives in a tree and loves to play. </span>
+                                <span class="read_text" id="s_03_3_en"> One day he asks his friend Rabbit to play with him, </span>
+                                <span class="read_text" id="s_03_4_en">but she says no. </span>
+                                <span class="read_text" id="s_03_5_en">Then it starts to rain, </span>
+                                <span class="read_text" id="s_03_6_en">and Rabbit takes shelter in her burrow beneath the tree. </span>
+                                <span class="read_text" id="s_03_7_en">She invites monkey to shelter there with him, </span>
+                                <span class="read_text" id="s_03_8_en">but Monkey says the burrow is too small. </span>
+                                <span class="read_text" id="s_03_9_en">Instead he stays in the tree and gets wet. </span>
+                                <span class="read_text" id="s_03_10_en">But he decides to build a house for himself.</span>
+                                <span class="read_text" id="s_03_11_en">The next day, </span>
+                                <span class="read_text" id="s_03_12_en">Monkey’s friend Elephant </span>
+                                <span class="read_text" id="s_03_13_en">tells him to begin work on the house, </span>
+                                <span class="read_text" id="s_03_14_en">but it is Sunday and Monkey doesn’t start. </span>
+                                <span class="read_text" id="s_03_15_en">On Monday, </span>
+                                <span class="read_text" id="s_03_16_en">Monkey finds a swing to play on instead of working. </span>
+                                <span class="read_text" id="s_03_17_en">The day after that, </span>
+                                <span class="read_text" id="s_03_18_en">he picks peaches. </span>
+                                <span class="read_text" id="s_03_19_en">Monkey’s friends get more and more frustrated with him.</span>
+                                <span class="read_text" id="s_03_20_en">Finally, Monkey starts work </span>
+                                <span class="read_text" id="s_03_21_en">but then it starts to rain, </span>
+                                <span class="read_text" id="s_03_22_en">and he has no house to shelter in!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="col-md-12" style="padding: 5%;">
+                        <div class="script_title_wrap">
+                            <h1 class="script_title" style="text-align: center; font-size: 4rem; font-weight: bold; color: #ed4431">明日复明日</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-offset-2 col-md-2" style="">
+                        <div class="script_caracters_wrap">
+                            <h3 style="font-weight: 3rem; font-weight: bold; margin: 0">角色</h3>
+                            <div style="font-size: 2.5rem">
+                                <div style="color: #7030a0">小猴子</div>
+                                <div style="color: #0099cc">小白兔 </div>
+                                <div style="color: #009900">大象</div>
+                                <div style="color: #e26c09">旁白</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6" style="">
+                        <div class="dialog">
+                            <div class="dialog_character">故事摘要</div>
+                            <div class="dialog_text" id="d_0_cn" data-sound="03.mp3">
+                                <span class="read_text" id="s_0_cn" data-sound="03.mp3">
+                                本剧讲述了一只住在树上整天玩耍的小猴子的故事。一天他邀请好朋友小白兔和他一起玩，但小白兔拒绝了。这时天突然开始下雨了，小白兔钻进了树下的树洞里去避雨。她邀请小猴子进来和她一块儿避雨，但小猴子却说这个树洞太小了，因此他就一直待在树上，全身都被淋湿了。这时小猴子决定为自己建个房子。
+                                第二天，小猴子的朋友大象告诉他可以开始动工了，但由于这天是星期天，小猴子不愿意开工。到了星期一小猴子在秋千上玩了一整天又没有动工。又过了一天，小猴子去摘桃子了，就这样吃了一整天。小猴子的朋友们对他也感到越来越失望。
+                                最后，当小猴子开始准备造房子时，天却开始下雨了。小猴子也始终没有自己的房子能让他避雨。
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page_1" style="display: none; background-image: url('images/page01.png')">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 25%; top: 25%;">
+                            <h3 style="text-align: center; margin-bottom: 30px">Act 1</h3>
+                             <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">Narrator:</div>
+                                <div class="dialog_text" id="d_1_en" data-sound="04.mp3">
+                                    <span class="read_text" id="s_1_en" data-sound="03.mp3">
+                                    This is the story of a silly monkey who only likes to play.<br>
+                                    MONKEY sits on a tree branch, and talks to the audience
+                                    </span>
+                                </div>
+                              </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">Monkey:</div>
+                                <div class="dialog_text" id="d_2_en" data-sound="05.mp3">
+                                    <span class="read_text" id="s_2_en" data-sound="05.mp3">
+                                    I am Monkey. I live in a tree<br>
+                                    It’s the perfect home for me<br>
+                                    Up and down, I climb and play<br>
+                                    I swing from branch to branch all day<br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 52%; top: 20%">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #365f91">Rabbit:</div>
+                                <div class="dialog_text" id="d_3_en" data-sound="06.mp3">
+                                    <span class="dialog_text" id="s_3_en" data-sound="06.mp3">
+                                    Hello, Monkey, in your tree
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">Monkey:</div>
+                                <div class="dialog_text" id="d_4_en" data-sound="07.mp3">
+                                    <span class="read_text" id="s_4_en" data-sound="07.mp3">
+                                    Rabbit! Will you play with me?
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #365f91">Rabbit:</div>
+                                <div class="dialog_text" id="d_5_en" data-sound="08.mp3">
+                                    <span class="read_text" id="s_5_en" data-sound="08.mp3">
+                                    No, my friend, I am too busy<br>
+                                    Climbing trees makes me feel dizzy!
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">Monkey:</div>
+                                <div class="dialog_text" id="d_6_en" data-sound="09.mp3">
+                                    <div class="read_text" id="s_6_en" data-sound="09.mp3">
+                                    Come on, Rabbit, have some fun<br>
+                                    Climbing’s good for everyone!
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 25%; top: 25%;">
+                            <h3 style="text-align: center; margin-bottom: 30px">第一幕</h3>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">旁白:</div>
+                                <div class="dialog_text" id="d_1_cn" data-sound="04.mp3">
+                                    <div class="read_text" id="s_1_cn" data-sound="04.mp3">
+                                    这是关于一只既愚笨又爱玩的小猴子的故事。<br>
+                                    小猴子坐在树枝上，对观众说道。
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">小猴子:</div>
+                                <div class="dialog_text" id="d_2_cn" data-sound="05.mp3">
+                                    <span class="dialog_text" id="s_2_cn" data-sound="05.mp3">
+                                    我是小猴子，我住在树上<br>
+                                    这是我美好的家<br>
+                                    我总是爬上爬下地玩耍<br>
+                                    整天在树枝间荡来荡去<br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 52%; top: 20%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">小白兔:</div>
+                                <div class="dialog_text" id="d_3_cn" data-sound="06.mp3">
+                                    <span class="read_text" id="s_3_cn" data-sound="06.mp3">
+                                    你好，小猴子，在树上呢
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">小猴子:</div>
+                                <div class="dialog_text" id="d_4_cn" data-sound="07.mp3">
+                                    <span class="read_text" id="s_4_cn" data-sound="07.mp3">
+                                    小白兔，你愿意陪我玩吗？
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">小白兔:</div>
+                                <div class="dialog_text" id="d_5_cn" data-sound="08.mp3">
+                                    <span class="dialog_text" id="s_5_cn" data-sound="08.mp3">
+                                    不，我的朋友，我太忙了<br>
+                                    ! 爬树会让我感到头晕！
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">小猴子:</div>
+                                <div class="dialog_text" id="d_6_cn" data-sound="09.mp3">
+                                    <span class="read_text" id="s_6_cn" data-sound="09.mp3">
+                                    快来吧，小兔子，一起玩吧<br>
+                                    爬树有益健康！
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page_2" style="background-image: url('images/page02.png'); display: none">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 23%; top: 13%;">
+                            <div class="dialog" id="d">
+                                <div class="dialog_character" style="color: #365f91">Rabbit:</div>
+                                <div class="dialog_text" id="d_7_en" data-sound="10.mp3">
+                                    <div class="read_text" id="s_7_en" data-sound="10.mp3">
+                                    Wait! Do I feel rain? Oh dear! <br>
+                                    Soon it’s going to rain, I fear
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">Monkey:</div>
+                                <div class="dialog_text" id="d_8_en" data-sound="11.mp3">
+                                    <span class="dialog_text" id="s_8_en" data-sound="11.mp3">
+                                    Yes, I felt a few more drops
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">Rabbit:</div>
+                                <div class="dialog_text" id="d_9_en" data-sound="12.mp3">
+                                    <span class="dialog_text" id="s_9_en" data-sound="12.mp3">
+                                    Let’s take shelter till it stops <br>
+                                    My burrow is the place to be<br>
+                                    Come inside and wait with me
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 55%; top: 13%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">Monkey:</div>
+                                <div class="dialog_text" id="d_10_en" data-sound="13.mp3">
+                                    <span class="read_text" id="s_10_en" data-sound="13.mp3">
+                                    Now the rain is pouring down!
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">Rabbit:</div>
+                                <div class="dialog_text" id="d_11_en" data-sound="14.mp3">
+                                    <span class="read_text" id="s_11_en" data-sound="14.mp3">
+                                    Don’t stay out there, or you’ll drown! <br>
+                                    Monkey, come in from the storm <br>
+                                    Inside, you’ll be dry and warm
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 23%; top: 13%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #996600">小白兔:</div>
+                                <div class="dialog_text" id="d_7_cn" data-sound="10.mp3">
+                                    <span class="read_text" id="s_7_cn" data-sound="10.mp3">
+                                    等等！我淋到雨了吗？我的天呐！ <br>
+                                    恐怕很快就要下雨了
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">小猴子:</div>
+                                <div class="dialog_text" id="d_8_cn" data-sound="11.mp3">
+                                    <span class="read_text" id="s_8_cn" data-sound="11.mp3">
+                                    是的，我也淋到雨滴了
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">小白兔:</div>
+                                <div class="dialog_text" id="d_9_cn" data-sound="12.mp3">
+                                    <span class="read_text" id="s_9_cn" data-sound="12.mp3">
+                                    让我们去避避雨等雨停吧 <br>
+                                    这是我待的树洞<br>
+                                    快进来和我一起等雨停吧
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 55%; top: 13%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">小猴子:</div>
+                                <div class="dialog_text" id="d_10_cn" data-sound="13.mp3">
+                                    <span class="read_text" id="s_10_cn" data-sound="13.mp3">
+                                    现在大雨倾盆而下！
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">小白兔:</div>
+                                <div class="dialog_text" id="d_11_cn" data-sound="14.mp3">
+                                    <span class="read_text" id="s_11_cn" data-sound="14.mp3">
+                                    不要待在外面，否则你会被雨水淹没的！ <br>
+                                    小猴子，快进来躲躲暴雨<br>
+                                    里面既干燥又暖和
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page_3" style="background-image: url('images/page03.png'); display: none">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-right" style="left: 55%; top: 18%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">Monkey:</div>
+                                <div class="dialog_text" id="d_12_en" data-sound="15.mp3">
+                                    <span class="read_text" id="s_12_en" data-sound="15.mp3">
+                                    Thank you, my dear friend, but no<br>
+                                    Soon enough the rain will go<br>
+                                    I don’t like getting wet at all,<br>
+                                    But Rabbit’s house is very small<br>
+                                    A house! Yes, that’s a good idea<br>
+                                    I will build a house up here!<br>
+                                    A great, big treehouse way up high<br>
+                                    I’ll be warm and I’ll be dry<br>
+                                    Better than that little burrow<br>
+                                    I’ll start building it… tomorrow
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-right" style="left: 55%; top: 18%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">小猴子:</div>
+                                <div class="dialog_text" id="d_12_cn" data-sound="15.mp3">
+                                    <span class="read_text" id="s_12_cn" data-sound="15.mp3">
+                                    谢谢你，我亲爱的朋友，但是不了<br>
+                                    雨很快就会停<br>
+                                    虽然我一点都不喜欢被淋湿<br>
+                                    但是你的房子实在太小了<br>
+                                    房子！是的，那是一个好主意<br>
+                                    我会在这上面建一个自己的房子<br>
+                                    又好又大，高高挂在树上的房子<br>
+                                    在里面既温暖又干燥<br>
+                                    比那个小树洞强多了<br>
+                                    我马上动工……就从明天开始！
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-----------------------------------New Part-------------------------------------------------------------------------------->
+            <div class="page" id="page_4" style="display: none; background-image: url('images/page04.png')">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 24%; top: 22%;">
+                            <h3 style="text-align: center; margin-bottom: 30px">Act 2</h3>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">Narrator:</div>
+                                <div class="dialog_text" id="d_13_en" data-sound="16.mp3">
+                                    <span class="read_text" id="s_13_en" data-sound="16.mp3">
+                                    The next day is Sunday and it’s a sunny day.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">Monkey:</div>
+                                <div class="dialog_text" id="d_14_en" data-sound="17.mp3">
+                                    <span class="read_text" id="s_14_en" data-sound="17.mp3">
+                                    The rain clouds went away last night<br>
+                                    Today it’s sunny, warm and bright.<br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 53%; top: 6%">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_15_en" data-sound="18.mp3">
+                                    <span class="read_text" id="s_15_en" data-sound="18.mp3">
+                                    Good morning, Elephant. Nice day!</br>
+                                    Would you like to come and play?
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">ELEPHANT:</div>
+                                <div class="dialog_text" id="d_16_en" data-sound="19.mp3">
+                                    <span class="read_text" id="s_16_en" data-sound="19.mp3">
+                                    Good morning, Monkey. Don’t forget</br>
+                                    Yesterday was very wet.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_17_en" data-sound="20.mp3">
+                                    <span class="read_text" id="s_17_en" data-sound="20.mp3">
+                                    Yes, but now I have a plan</br>
+                                    To build a house. I think I can!
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 24%; top: 22%;">
+                            <h3 style="text-align: center; margin-bottom: 30px">第二幕</h3>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">旁白:</div>
+                                <div class="dialog_text" id="d_13_cn" data-sound="16.mp3">
+                                    <span class="read_text" id="s_13_cn" data-sound="16.mp3">
+                                    第二天是星期天，天气阳光明媚。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_14_cn" data-sound="17.mp3">
+                                    <span class="read_text" id="s_14_cn" data-sound="17.mp3">
+                                    乌云昨晚已经走了<br>
+                                    今天天气阳光明媚，既温暖又明亮<br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 53%; top: 6%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_15_cn" data-sound="18.mp3">
+                                    <span class="read_text" id="s_15_cn" data-sound="18.mp3">
+                                    早上好，大象，日安</br>
+                                    你愿意来和我玩吗？
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">大象:</div>
+                                <div class="dialog_text" id="d_16_cn" data-sound="19.mp3">
+                                    <span class="read_text" id="s_16_cn" data-sound="19.mp3">
+                                    早上好，小猴子，不要忘了</br>
+                                    昨晚你都被淋湿了。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_17_cn" data-sound="20.mp3">
+                                    <span class="read_text" id="s_17_cn" data-sound="20.mp3">
+                                    是的，但我现在有个计划</br>
+                                    我想我能造所房子！
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page_5" style="display: none; background-image: url('images/page05.png')">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-right" style="left: 55%; top: 18%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">ELEPHANT:</div>
+                                <div class="dialog_text" id="d_18_en" data-sound="21.mp3">
+                                    <span class="read_text" id="s_18_en" data-sound="21.mp3">
+                                    Build a house? Well then be smart</br>
+                                    Get to work now! Make a start!
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_19_en" data-sound="22.mp3">
+                                    <span class="read_text" id="s_19_en" data-sound="22.mp3">
+                                    But Elephant, today is Sunday,</br>
+                                    That should always be a fun day.
+                                    </span>
+                                </div>
+                            </div>
+                            <!--------------------------------------------------------------------------------------page addiotion------------------->
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">ELEPHANT:</div>
+                                <div class="dialog_text" id="d_20_en" data-sound="23.mp3">
+                                    <span class="read_text" id="s_20_en" data-sound="23.mp3">
+                                    You can play for just this one day</br>
+                                    Start your job tomorrow – Monday.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_21_en" data-sound="24.mp3">
+                                    <span class="read_text" id="s_21_en" data-sound="24.mp3">
+                                    Come back then and you will see</br>
+                                    A fine new house up in my tree.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-right" style="left: 55%; top: 18%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">大象:</div>
+                                <div class="dialog_text" id="d_18_cn" data-sound="21.mp3">
+                                    <span class="read_text" id="s_18_cn" data-sound="21.mp3">
+                                    造房子？很好很聪明</br>
+                                    现在就去造！马上就开工！
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_19_cn" data-sound="22.mp3">
+                                    <span class="read_text" id="s_19_cn" data-sound="22.mp3">
+                                    可是大象，今天是星期天</br>
+                                    应该是玩乐的日子。
+                                    </span>
+                                </div>
+                            </div>
+                            <!--------------------------------------------------------------------------------------page addiotion------------------->
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">大象:</div>
+                                <div class="dialog_text" id="d_20_cn" data-sound="23.mp3">
+                                    <span class="read_text" id="s_20_cn" data-sound="23.mp3">
+                                    你只可以玩今天一天</br>
+                                    明天是星期一，你就要开工。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_21_cn" data-sound="24.mp3">
+                                    <span class="read_text" id="s_21_cn" data-sound="24.mp3">
+                                    到时你再过来就会看到啦</br>
+                                    间崭新漂亮的房子高高挂在树上
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page_6" style="display: none; background-image: url('images/page06.png')">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 22%; top: 13%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">NARRATOR:</div>
+                                <div class="dialog_text" id="d_22_en" data-sound="25.mp3">
+                                    <span class="read_text" id="s_22_en" data-sound="25.mp3">
+                                    Monkey plays all day on Sunday. The next day he wakes up and goes out to play. He finds a swing.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">RABBIT:</div>
+                                <div class="dialog_text" id="d_23_en" data-sound="26.mp3">
+                                    <span class="read_text" id="s_23_en" data-sound="26.mp3">
+                                    Start your house today, my friend</br>
+                                    You did nothing, all weekend.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_24_en" data-sound="27.mp3">
+                                    <span class="read_text" id="s_24_en" data-sound="27.mp3">
+                                    Yes, but Rabbit, here’s the thing:</br>
+                                    I just found this super swing!</br>
+                                    I like swinging to and fro.</br>
+                                    Look how high up I can go!</br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 55%; top: 60%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">RABBIT:</div>
+                                <div class="dialog_text" id="d_25_en" data-sound="28.mp3">
+                                    <span class="read_text" id="s_25_en" data-sound="28.mp3">
+                                    Monkey! Always having fun!</br>
+                                    Start your work. It must be done!
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_26_en" data-sound="29.mp3">
+                                    <span class="read_text" id="s_26_en" data-sound="29.mp3">
+                                    Rabbit, go home to your burrow!</br>
+                                    I will build my house tomorrow.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 22%; top: 13%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">旁白:</div>
+                                <div class="dialog_text" id="d_22_cn" data-sound="25.mp3">
+                                    <span class="read_text" id="s_22_cn" data-sound="25.mp3">
+                                    小猴子星期天玩了一整天。第二天他醒来后又出去玩了。他发现有一个秋千。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">小白兔:</div>
+                                <div class="dialog_text" id="d_23_cn" data-sound="26.mp3">
+                                    <span class="read_text" id="s_23_cn" data-sound="26.mp3">
+                                    今天可以开始造房子啦，我的朋友</br>
+                                    你整个周末什么都没做。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_24_cn" data-sound="27.mp3">
+                                    <span class="read_text" id="s_24_cn" data-sound="27.mp3">
+                                    好的，小白兔，事情是这样的</br>
+                                    我刚刚发现了一个超级好玩的秋千！</br>
+                                    我喜欢来来回回地荡秋千。</br>
+                                    快看我荡得多高啊！</br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 55%; top: 60%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">小白兔:</div>
+                                <div class="dialog_text" id="d_25_cn" data-sound="28.mp3">
+                                    <span class="read_text" id="s_25_cn" data-sound="28.mp3">
+                                    小猴子，你总是在玩乐!</br>
+                                    快开始造你的房子。这事必须得完成！
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_26_cn" data-sound="29.mp3">
+                                    <span class="read_text" id="s_26_cn" data-sound="29.mp3">
+                                    小白兔，快回你树洞里的家去吧！</br>
+                                    我明天就开始造房子。
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page_7" style="display: none; background-image: url('images/page07.png')">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 20%; top: 40%;">
+                            <h3 style="text-align: center; margin-bottom: 30px">Act 3</h3>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">Narrator:</div>
+                                <div class="dialog_text" id="d_27_en" data-sound="31.mp3">
+                                    <span class="read_text" id="s_27_en" data-sound="31.mp3">
+                                    Monekey does no work on Monday.</br>
+                                    The next day is Tuesday.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">ELEPHANT:</div>
+                                <div class="dialog_text" id="d_28_en" data-sound="32.mp3">
+                                    <span class="read_text" id="s_28_en" data-sound="32.mp3">
+                                    Now it’s Tuesday, and I’ll bet</br>
+                                    That Monkey hasn’t started yet.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">RABBIT:</div>
+                                <div class="dialog_text" id="d_29_en" data-sound="33.mp3">
+                                    <span class="read_text" id="s_29_en" data-sound="33.mp3">
+                                    You up there! Have you begun?</br>
+                                    Or are you still just having fun?
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 70%; top: 10%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_30_en" data-sound="34.mp3">
+                                    <span class="read_text" id="s_30_en" data-sound="34.mp3">
+                                    Look what I found. Can you see?</br>
+                                    Lots of peaches in the tree!</br>
+                                    Picking peaches is such fun</br>
+                                    Then I eat them, one by one</br>
+                                    Peaches are so good to eat</br>
+                                    Nice and juicy, soft and sweet</br>
+                                    Would you like to try a peach?</br>
+                                    Look, I have three – that’s one each!</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">ELEPHANT:</div>
+                                <div class="dialog_text" id="d_31_en" data-sound="35.mp3">
+                                    <span class="read_text" id="s_31_en" data-sound="35.mp3">
+                                    That is kind of you, but no,</br>
+                                    I ate half an hour ago.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 20%; top: 40%;">
+                            <h3 style="text-align: center; margin-bottom: 30px">第三幕</h3>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">旁白:</div>
+                                <div class="dialog_text" id="d_27_cn" data-sound="31.mp3">
+                                    <span class="read_text" id="s_27_cn" data-sound="31.mp3">
+                                    小猴子星期一没有开工。</br>
+                                    第二天就是星期二了。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">大象:</div>
+                                <div class="dialog_text" id="d_28_cn" data-sound="32.mp3">
+                                    <span class="read_text" id="s_28_cn" data-sound="32.mp3">
+                                    今天是星期二，我打赌</br>
+                                    小猴子肯定还未开工。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">小白兔:</div>
+                                <div class="dialog_text" id="d_29_cn" data-sound="33.mp3">
+                                    <span class="read_text" id="s_29_cn" data-sound="33.mp3">
+                                    你在上面啊！开工了吗？</br>
+                                    还是你仍在玩乐啊？
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 70%; top: 10%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_30_cn" data-sound="34.mp3">
+                                    <span class="read_text" id="s_30_cn" data-sound="34.mp3">
+                                    快看，看我发现了什么？ </br>
+                                    树上有好多好多桃子啊！</br>
+                                    摘桃子真好玩</br>
+                                    然后我一个个把它们吃掉</br>
+                                    桃子真好吃</br>
+                                    美味多汁，既软又甜</br>
+                                    你要不要尝一个？</br>
+                                    看！我有三个——每个都和这个一样！</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">大象:</div>
+                                <div class="dialog_text" id="d_31_cn" data-sound="35.mp3">
+                                    <span class="read_text" id="s_31_cn" data-sound="35.mp3">
+                                    你真好心，但是不了</br>
+                                    我半小时前吃过了。
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page_8" style="display: none; background-image: url('images/page08.png')">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 15%; top: 53%">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">Rabbit:</div>
+                                <div class="dialog_text" id="d_32_en" data-sound="36.mp3">
+                                    <span class="read_text" id="s_32_en" data-sound="36.mp3">
+                                    We have better things to do</br>
+                                    And really, Monkey, so do you!</br>
+                                    There’s no time to play together</br>
+                                    Picking peaches? That’s not clever!</br>
+                                    Take your hammer, nails and wood,</br>
+                                    And build that house. You know you should!
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 65%; top: 6%">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">ELEPHANT:</div>
+                                <div class="dialog_text" id="d_33_en" data-sound="37.mp3">
+                                    <span class="read_text" id="s_33_en" data-sound="37.mp3">
+                                    Monkey, think about the weather</br>
+                                    It will not stay fine forever</br>
+                                    One day soon it’s going to rain</br>
+                                    When you get wet, do not complain!
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">RABBIT:</div>
+                                <div class="dialog_text" id="d_34_en" data-sound="38.mp3">
+                                    <span class="read_text" id="s_34_en" data-sound="38.mp3">
+                                    You need a roof above your head</br>
+                                    But you play silly games instead!</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_35_en" data-sound="39.mp3">
+                                    <span class="read_text" id="s_35_en" data-sound="39.mp3">
+                                    Now, now, friends, please do not worry</br>
+                                    I will build it, there’s no hurry!</br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 15%; top: 53%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">小白兔:</div>
+                                <div class="dialog_text" id="d_32_cn" data-sound="36.mp3">
+                                    <span class="read_text" id="s_32_cn" data-sound="36.mp3">
+                                    我们有更要紧的事要做</br>
+                                    真的，你也是！</br>
+                                    已经没时间再一起玩了</br>
+                                    摘桃子去？那很不明智！</br>
+                                    带上你的榔头，钉子和木材</br>
+                                    造房子去，你知道应该怎么做！
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 65%; top: 6%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">大象:</div>
+                                <div class="dialog_text" id="d_33_cn" data-sound="37.mp3">
+                                    <span class="read_text" id="s_33_cn" data-sound="37.mp3">
+                                    小猴子，想想看天气吧</br>
+                                    不会永远是大晴天的</br>
+                                    总有一天会立马下起雨来</br>
+                                    当你被雨淋湿了，可不要抱怨！
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">小白兔:</div>
+                                <div class="dialog_text" id="d_34_cn" data-sound="38.mp3">
+                                    <span class="read_text" id="s_34_cn" data-sound="38.mp3">
+                                    你需要一个可以为你遮风挡雨的屋顶</br>
+                                    但你却一直无所事事地消磨时光。</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_35_cn" data-sound="39.mp3">
+                                    <span class="read_text" id="s_35_cn" data-sound="39.mp3">
+                                    噢，噢，我的朋友，请不要担忧</br>
+                                    我会开始造的，不用着急！</br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page_9" style="display: none; background-image: url('images/page09.png')">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 20%; top: 10%;">
+                            <h3 style="text-align: center; margin-bottom: 30px">Act 4</h3>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">Narrator:</div>
+                                <div class="dialog_text" id="d_36_en" data-sound="40.mp3">
+                                    <span class="read_text" id="s_36_en" data-sound="40.mp3">
+                                    Days go by and Monkey still does not build his house.
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_37_en" data-sound="41.mp3">
+                                    <span class="read_text" id="s_37_en" data-sound="41.mp3">
+                                    This is it. Today’s the day</br>
+                                    I’ll start work. No more play</br>
+                                    I have my hammer, nails and wood</br>
+                                    I’ll build it well. I’ll make it good</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">NARRATOR:</div>
+                                <div class="dialog_text" id="d_38_en" data-sound="42.mp3">
+                                    <span class="read_text" id="s_38_en" data-sound="42.mp3">
+                                    Monkey starts work on his house, but soon feels tired and takes a nap.
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 55%; top: 10%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">RABBIT:</div>
+                                <div class="dialog_text" id="d_39_en" data-sound="45.mp3">
+                                    <span class="read_text" id="s_39_en" data-sound="45.mp3">
+                                    Listen, Monkey, I must speak:</br>
+                                    You’ve done no work at all this week.</br>
+                                    Now you really must begin it!</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_40_en" data-sound="46.mp3">
+                                    <span class="read_text" id="s_40_en" data-sound="46.mp3">
+                                    Let me rest for one more minute
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">ELEPHANT:</div>
+                                <div class="dialog_text" id="d_41_en" data-sound="47.mp3">
+                                    <span class="read_text" id="s_41_en" data-sound="47.mp3">
+                                    Oh, my foolish friend, I knew it –</br>
+                                    You are never going to do it!
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 20%; top: 10%;">
+                            <h3 style="text-align: center; margin-bottom: 30px">第四幕</h3>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">旁白:</div>
+                                <div class="dialog_text" id="d_36_cn" data-sound="40.mp3">
+                                    <span class="read_text" id="s_36_cn" data-sound="40.mp3">
+                                    日子一天天过去，小猴子仍然没有开始造房子。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_37_cn" data-sound="41.mp3">
+                                    <span class="read_text" id="s_37_cn" data-sound="41.mp3">
+                                    就是今天。今天是个好日子</br>
+                                    我马上开始动工，不再贪玩享乐</br>
+                                    我有榔头，钉子和木材</br>
+                                    我会努力造房子，把它造得很好。
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">旁白:</div>
+                                <div class="dialog_text" id="d_38_cn" data-sound="42.mp3">
+                                    <span class="read_text" id="s_38_cn" data-sound="42.mp3">
+                                    小猴子开始造他的房子，但很快他就觉得累了，开始打盹了。
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="section-right" style="left: 55%; top: 10%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #0099cc">小白兔:</div>
+                                <div class="dialog_text" id="d_39_cn" data-sound="45.mp3">
+                                    <span class="read_text" id="s_39_cn" data-sound="45.mp3">
+                                    听着，小猴子，有些话我不得不说</br>
+                                    这个礼拜你什么都没做</br>
+                                    现在的你必须要开始工作了！</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_40_cn" data-sound="46.mp3">
+                                    <span class="read_text" id="s_40_cn" data-sound="46.mp3">
+                                    让我再多休息一会儿
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">大象:</div>
+                                <div class="dialog_text" id="d_41_cn" data-sound="47.mp3">
+                                    <span class="read_text" id="s_41_cn" data-sound="47.mp3">
+                                    噢，我愚蠢的朋友，我知道了</br>
+                                    你永远也不打算做完这事了。
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page_10" style="display: none; background-image: url('images/page10.png')">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 10%; top: 14%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_42_en" data-sound="48.mp3">
+                                    <span class="read_text" id="s_42_en" data-sound="48.mp3">
+                                    What is that? Did I feel rain?</br>
+                                    Hope I don’t get wet again
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">ELEPHANT:</div>
+                                <div class="dialog_text" id="d_43_en" data-sound="49.mp3">
+                                    <span class="read_text" id="s_43_en" data-sound="49.mp3">
+                                    The clouds are getting dark and grey</br>
+                                    A nasty storm is on its way</br>
+                                    Rabbit! Get inside. Don’t wait</br>
+                                    <!-----------------I have to place below text into right--------------------->
+                                    Sorry, Monkey. It’s too late</br>
+                                    You have no right to get upset</br>
+                                    You have not built your treehouse yet</br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-left" style="left: 10%; top: 14%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_42_cn" data-sound="48.mp3">
+                                    <span class="read_text" id="s_42_cn" data-sound="48.mp3">
+                                    你说什么？我淋到雨了吗？</br>
+                                    真希望我不会再被淋湿
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #009900">大象:</div>
+                                <div class="dialog_text" id="d_43_cn" data-sound="49.mp3">
+                                    <span class="read_text" id="s_43_cn" data-sound="49.mp3">
+                                    天上的云越来越黑</br>
+                                    令人 生厌的暴风雨正在步步逼近</br>
+                                    小白兔！快躲进去，不要迟疑</br>
+                                    <!-----------------I have to place below text into right--------------------->
+                                    抱歉，小猴子，一切都太晚了</br>
+                                    你不必再感到不安了</br>
+                                    你树上的房子都还没造好呢</br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="page" id="page_11" style="display: none; background-image: url('images/page11.png')">
+                <div class="page_en">
+                    <div class="page_content">
+                        <div class="section-right" style="left: 65%; top: 5%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">NARRATOR:</div>
+                                <div class="dialog_text" id="d_44_en" data-sound="50.mp3">
+                                    <span class="read_text" id="s_44_en" data-sound="50.mp3">
+                                    Elephant and Rabbit go home to take shelter from the storm.</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">MONKEY:</div>
+                                <div class="dialog_text" id="d_45_en" data-sound="51.mp3">
+                                    <span class="read_text" id="s_45_en" data-sound="51.mp3">
+                                    Now I’m wet and I’m alone</br>
+                                    I have no house to call my own</br>
+                                    I wasted time, that’s my regret</br>
+                                    Now look at me, I’m soaking wet</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">NARRATOR:</div>
+                                <div class="dialog_text" id="d_46_en" data-sound="52.mp3">
+                                    <span class="read_text" id="s_46_en" data-sound="52.mp3">
+                                    What’s the lesson here for you?</br>
+                                    When you have a job to do</br>
+                                    Get to work and stop your play</br>
+                                    Learn from Monkey, Start today!</br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page_cn" style="display: none">
+                    <div class="page_content">
+                        <div class="section-right" style="left: 65%; top: 5%;">
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">旁白:</div>
+                                <div class="dialog_text" id="d_44_cn" data-sound="50.mp3">
+                                    <span class="read_text" id="s_44_cn" data-sound="50.mp3">
+                                    大象和小白兔见到暴风雨来了都躲回家去避雨了。</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #7030a0">小猴子:</div>
+                                <div class="dialog_text" id="d_45_cn" data-sound="51.mp3">
+                                    <span class="read_text" id="s_45_cn" data-sound="51.mp3">
+                                    现在我被淋湿了，感到很孤独</br>
+                                    我没有自己的房子</br>
+                                    我后悔浪费了那么多时间</br>
+                                    看看现在的我，被淋成了落汤鸡</br>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="dialog">
+                                <div class="dialog_character" style="color: #e26c09">旁白:</div>
+                                <div class="dialog_text" id="d_46_cn" data-sound="52.mp3">
+                                    <span class="read_text" id="s_46_cn" data-sound="52.mp3">
+                                    你从中吸取到了什么教训？</br>
+                                    当有要完成一项工作时</br>
+                                    马上开工，不要贪图玩乐</br>
+                                    从小猴子身上吸取教训，就从今天开始。</br>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--------------------------------------------------------------------------------------------------------------------------------------------------->
+            <div class="page_navigator" id="page_nav_prev">
+                <img src="images/pagenave-prev.png" width="80px" height="80px">
+            </div>
+            <div class="page_navigator" id="page_nav_next">
+                <img src="images/pagenave-next.png" width="80px" height="80px">
+            </div>
+            <div class="translate_language" style="position: absolute;right:20px;top:20px;">
+                <button type="button" id="language_status_btn"  data-language="china" >中文</button>
+            </div>
+        </div>
+    </div>
+    <div class="btn_wrap">
+        <div class="btn_elem" style="left: 0.88%; top: 14.95%">
+            <a id="btn_comment"><img height="50px" src="images/btn-comment.png"></a><br>
+        </div>
+        <div class="btn_elem" style="left: 0.88%; top: 33.35%">
+            <a id="btn_words"><img height="50px" src="images/btn-words.png"></a><br>
+        </div>
+        <div class="btn_elem" style="left: 0.88%; top: 51.52%">
+            <a id="btn_print"><img height="50px" src="images/btn-print.png"></a>
+        </div>
+        <div class="btn_elem" style="left: 0.88%; top: 68.95%">
+            <a id="btn_scriptread"><img height="50px" src="images/btn-scriptread_hover.png"></a>
+        </div>
+        <div class="btn_elem" style="left: 94.94%; top: 23.98%">
+            <a id="btn_song"><img height="50px" src="images/btn-song.png"></a>
+        </div>
+        <div class="btn_elem" style="left: 94.94%; top: 42%">
+            <a id="btn_scriptmake"><img height="50px" src="images/btn-scriptmake.png"></a>
+        </div>
+        <div class="btn_elem" style="left: 94.94%; top: 60%">
+            <a id="btn_headmake"><img height="50px" src="images/btn-headmake.png"></a>
+        </div>
+    </div>
+
+    <style>
+        .recording-tooltip{
+            background: #ff363a;
+            display: block;
+            padding: 5px;
+            border: 2px solid #e21d21;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            font-size: 14px;
+            color: #fff;
+            border-radius: 10px;
+        }
+    </style>
+    <div id="read_modal">
+        <div class="modal-header">
+            <span class="close" id="read_close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <div class="read-sec">
+                <a id="read-play-btn"><img src="images/read-play.png" width="50px" height="50px"></a>
+                <a id="read-record-btn"><img src="images/read-record.png" width="50px" height="50px"></a>
+                <span class="recording-tooltip" style="display: none">开始录音</span>
+                <p id="compaire-text">
+                    <!--<span class="low">afsdfasdf</span> <span class="middle">asfdawsfwe</span> <span class="high">dfgfgfdg</span>-->
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--------------------------------------lightbox with video before enter script read page-------------------------->
+    <style type="text/css">
+        .backdrop_scriptread
+        {
+            position:absolute;
+            top:0px;
+            left:0px;
+            width:100%;
+            height:100%;
+            background:#000;
+            opacity: .0;
+            filter:alpha(opacity=0);
+            z-index:50;
+            display:none;
+        }
+        .box
+        {
+            position:absolute;
+            top:20%;
+            left:30%;
+            /*width:500px;*/
+            /*height:300px;*/
+            background:#ffffff;
+            z-index:51;
+            /*padding:10px;*/
+            display:none;
+        }
+        .boxclose
+        {
+            float:right;
+            margin-right:6px;
+            cursor:pointer;
+            font-size:25px;
+        }
+    </style>
+    <div class="backdrop_scriptread"></div>
+    <div stt class="box">
+        <div class="box_title" style="height:35px;background-color:#9cf">
+            <span class="boxclose" style="font-size: 25px;padding-right:8px;">&times;</span>
+        </div>
+        <div  class="box_content">
+            <video width="640" controls autoplay id="scriptread_video">
+                <source src="video/introduce.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <!--------------------------------------lightbox with video before enter script read page-------------------------->
+
+
+    <script type="text/javascript" src="./js/plugin/jquery-1.10.2.js"></script>
+    <script type="text/javascript" src="./js/plugin/jquery-1.9.1.min.js"></script>
+    <script type="text/javascript" src="./js/plugin/jquery.pngFix.pack.js"></script>
+    <script type="text/javascript" src="./js/plugin/interface.js"></script>
+	<script type="text/javascript" src="./js/plugin/vplayer.js"></script>
+    <script type="text/javascript" src="./js/plugin/hammer.min.js"></script>
+	<script type="text/javascript" src="./js/plugin/lufylegend-1.10.1.min.js"></script>
+    <script type="text/javascript" src="./js/plugin/lufylegend.ui-0.14.1.min.js"></script>
+	<!--<script type="text/javascript" src="./js/game.js"></script>-->
+    <!--<script type="text/javascript" src="./js/lib.js"></script>-->
+    <script type="text/javascript" src="./js/main.js"></script>
+    <script type="text/javascript" src="./js/button.js"></script>
+    <script type="text/javascript" src="./js/read.js"></script>
+    <script type="text/javascript" src="./js/words.js"></script>
+	
+</body>
+</html>
