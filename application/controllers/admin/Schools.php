@@ -91,8 +91,8 @@ class Schools extends Admin_Controller
         foreach( $schools as $school):
 
             $stop = '';
-            if($school->stop=='1')  $stop = $this->lang->line('Enabled');
-            else   $stop = $this->lang->line('Disabled');
+            if($school->stop=='1')  $stop = $this->lang->line('Disabled');
+            else   $stop = $this->lang->line('Enabled');
             $classStr = $this->lang->line('Class');
             $gradeStr = $this->lang->line('Grade');;
 

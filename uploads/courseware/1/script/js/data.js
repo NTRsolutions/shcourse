@@ -1,12 +1,42 @@
 ﻿var new_words = {
     title: '生词本',
-    words: [{
-        word: 'bleat',
-        comment: 'to make a sound like a sheep makes'
-    }, {
-        word: 'fate',
-        comment: 'fortune,lot,or desting'
-    }]
+    words: [
+        {word: '单词:', comment: '' },
+        {word: '', comment: '&nbsp' },
+        {word: 'silly', comment: 'adj. 愚蠢的' },
+        {word: 'bottom', comment: 'n. 底部'},
+        {word: 'audience',comment: 'n. 观众'},
+        {word: 'pour', comment: 'v. 倒；灌'},
+        {word: 'perfect', comment: 'adj. 完美的'},
+        {word: 'drown', comment: 'v. 淹死'},
+        {word: 'dizzy', comment: 'adj. 晕眩的'},
+        {word: 'storm', comment: 'n. 暴风雨'},
+        {word: 'fear', comment: 'v. 害怕'},
+        {word: 'burrow', comment: 'n. 洞穴'},
+        {word: 'shelter', comment: 'n. 庇护'},
+        {word: 'plan', comment: 'n. 计划'},
+        {word: 'still', comment: 'adv. 仍然'},
+        {word: 'hammer', comment: 'n. 锤子'},
+        {word: 'nail', comment: 'n. 钉子'},
+        {word: 'wood', comment: 'n. 木材'},
+        {word: 'instead', comment: 'adv. 代替'},
+        {word: 'nasty', comment: 'adj. 讨厌的；令人生厌的'},
+        {word: 'upset', comment: 'adj. 苦恼的；不安的'},
+        {word: 'regret', comment: 'n. 后悔'},
+        {word: 'soaking', comment: 'adv. 湿透地'},
+        {word: '', comment: '&nbsp' },
+        {word: '短语:', comment: '' },
+        {word: '', comment: '&nbsp' },
+        {word: 'up and down', comment: '上上下下'},
+        {word: 'wake up', comment: '醒来'},
+        {word: 'make sb do sth', comment: '让某人做某事'},
+        {word: 'think about', comment: '考虑'},
+        {word: 'be good for', comment: '对……有益处'},
+        {word: 'get wet', comment: '淋湿'},
+        {word: 'take shelter', comment: '安身；躲避；寻求庇护'},
+        {word: 'takes a nap', comment: '打盹儿'},
+        {word: 'all day', comment: '整天'}
+    ]
 };
 
 var song_video = 'video/2.mp4';
